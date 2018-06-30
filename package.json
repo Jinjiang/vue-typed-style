@@ -13,13 +13,19 @@
   "keywords": [
     "Vue",
     "CSS",
-    "Typed",
-    "OM"
+    "Typed OM"
   ],
   "author": "Jinjiang",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Jinjiang/vue-typed-style/issues"
   },
-  "homepage": "https://github.com/Jinjiang/vue-typed-style#readme"
+  "homepage": "https://github.com/Jinjiang/vue-typed-style#readme",
+  "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "vue": "^2.5.16"
+  },
+  "dependencies": {
+    "css-typed-om": "^0.4.0"
+  }
 }
