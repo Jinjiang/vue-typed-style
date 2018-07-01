@@ -4,6 +4,7 @@
   "description": "Supporting CSS Typed OM in Vue.js",
   "main": "index.js",
   "scripts": {
+    "dev": "vue serve ./examples/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +23,8 @@
   },
   "homepage": "https://github.com/Jinjiang/vue-typed-style#readme",
   "devDependencies": {
+    "@vue/cli": "^3.0.0-rc.3",
+    "@vue/cli-service-global": "^3.0.0-rc.3",
     "vue": "^2.5.16"
   },
   "dependencies": {
