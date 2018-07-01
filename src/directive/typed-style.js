@@ -6,7 +6,6 @@ export default {
       for (const propName in value) {
         const propValue = value[propName]
         el.attributeStyleMap.set(propName, propValue)
-        currentStyle[propName] = propValue
       }
     }
   },
@@ -21,7 +20,6 @@ export default {
       for (const propName in value) {
         const propValue = value[propName]
         el.attributeStyleMap.set(propName, propValue)
-        currentStyle[propName] = propValue
       }
     }
   },

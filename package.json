@@ -1,5 +1,5 @@
 {
-  "name": "typed-style",
+  "name": "vue-typed-style",
   "version": "0.0.1",
   "description": "Supporting CSS Typed OM in Vue.js",
   "main": "index.js",
