@@ -1,3 +1,16 @@
+function resolvePropName (name) {
+  if (name.match(/^--/)) {
+    // CSS custom property
+    return name
+  } else if (name.match(/^\$/)) {
+    // prefix $ for CSS custom property
+    return name.replace(/^\$/, '--')
+  } else {
+    // convert camelCase into kebab-case
+    return name.replace(/([A-Z])/g, (_, char) => '-' + char.toLowerCase())
+  }
+}
+
 export default {
 
   // called only once, when the directive is first bound to the element.
@@ -5,7 +18,7 @@ export default {
     if (typeof value === 'object') {
       for (const propName in value) {
         const propValue = value[propName]
-        el.attributeStyleMap.set(propName, propValue)
+        el.attributeStyleMap.set(resolvePropName(propName), propValue)
       }
     }
   },
@@ -19,7 +32,7 @@ export default {
     if (typeof value === 'object') {
       for (const propName in value) {
         const propValue = value[propName]
-        el.attributeStyleMap.set(propName, propValue)
+        el.attributeStyleMap.set(resolvePropName(propName), propValue)
       }
     }
   },
@@ -30,5 +43,4 @@ export default {
 
   // // called only once, when the directive is unbound from the element.
   // unbind (el, binding, vnode) {}
-
 }
