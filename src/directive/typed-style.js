@@ -4,7 +4,7 @@ function resolvePropName (name) {
     return name
   } else if (name.match(/^\$/)) {
     // prefix $ for CSS custom property
-    return name.replace(/^\$/, '--')
+    return name.replace(/^\$/, '--').replace(/([A-Z])/g, (_, char) => '-' + char.toLowerCase())
   } else {
     // convert camelCase into kebab-case
     return name.replace(/([A-Z])/g, (_, char) => '-' + char.toLowerCase())
