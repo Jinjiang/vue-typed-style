@@ -18,7 +18,10 @@ export default {
     if (typeof value === 'object') {
       for (const propName in value) {
         const propValue = value[propName]
-        el.attributeStyleMap.set(resolvePropName(propName), propValue)
+        const finalPropName = resolvePropName(propName)
+        // // crashed in Chrome and bugy in Safari
+        // el.attributeStyleMap.set(finalPropName, propValue)
+        el.style.setProperty(finalPropName, propValue)
       }
     }
   },
@@ -32,7 +35,10 @@ export default {
     if (typeof value === 'object') {
       for (const propName in value) {
         const propValue = value[propName]
-        el.attributeStyleMap.set(resolvePropName(propName), propValue)
+        const finalPropName = resolvePropName(propName)
+        // // crashed in Chrome and bugy in Safari
+        // el.attributeStyleMap.set(finalPropName, propValue)
+        el.style.setProperty(finalPropName, propValue)
       }
     }
   },

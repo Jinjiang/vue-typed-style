@@ -1,30 +1,34 @@
 <template>
   <div v-typed-style="{
+
     width: CSS.px(w),
     height: new CSSUnitValue(h, 'px'),
-    // color: new CSSVariableReferenceValue('--main-color'),
-    // backgroundColor: new CSSVariableReferenceValue('--second-color'),
+
     $mainColor: mainColor,
-    $secondColor: secondColor
+    $secondColor: secondColor,
+
+    // CSSUnparsedValue & CSSVariableReferenceValue not polyfilled yet
+    color: 'var(--main-color)',
+    backgroundColor: 'var(--second-color)'
+
   }">Hello World</div>
 </template>
 
 <script>
-/* eslint-disable */
-
 export default {
   data () {
     return {
       w: 400,
       h: 300,
       mainColor: '#f0f0f0',
-      secondColor: '#ff9900'
+      secondColor: '#f90'
     }
   },
   methods: {
-    CSSUnitValue,
     // CSSUnparsedValue,
-    // CSSVariableReferenceValue
+    // CSSVariableReferenceValue,
+    // eslint-disable-next-line
+    CSSUnitValue
   }
 }
 </script>
